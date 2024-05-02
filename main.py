@@ -22,11 +22,25 @@ class PasswordClass:
 
 number_of_words = input("Introduce number of words for password: ")
 joiner = input("Introduce a joiner (or leave a space, or blank for no joiner): ")
+
 if math.isnan(int(number_of_words)):
     raise TypeError("Introduce a valid number")
 else:
     password_initial = PasswordClass.create_password_from_given_lentgh(int(number_of_words), joiner)
-    print(password_initial)
 
-password_capitalize = PasswordClass.randomize_upper_case_in_password(password_initial)
-print(password_capitalize)
+done = 0
+while done == 0:
+    capitalized = input("Do you want it capitalized? Please select Y/N: ")
+
+    if (capitalized == 'Y') or (capitalized == 'y'):
+        password_capitalized = PasswordClass.randomize_upper_case_in_password(password_initial)
+        print("Your password is: " + password_capitalized)
+        done = 1
+
+    elif (capitalized == 'N') or (capitalized == 'N'):
+        print("Your password is: " + password_initial)
+        done = 1
+
+    else:
+        print("Error! Please select a correct option.")
+        done = 0
