@@ -32,13 +32,22 @@ done = 0
 while done == 0:
     capitalized = input("Do you want it capitalized? Please select Y/N: ")
 
-    if (capitalized == 'Y') or (capitalized == 'y'):
+    if capitalized == 'Y':
         password_capitalized = PasswordClass.randomize_upper_case_in_password(password_initial)
-        print("Your password is: " + password_capitalized)
+        print("Your new password is: " + password_capitalized)
         done = 1
 
-    elif (capitalized == 'N') or (capitalized == 'N'):
-        print("Your password is: " + password_initial)
+    elif capitalized == 'y':
+        password_capitalized = PasswordClass.randomize_upper_case_in_password(password_initial)
+        print("Your new password is: " + password_capitalized)
+        done = 1
+
+    elif capitalized == 'N':
+        print("Your new password is: " + password_initial)
+        done = 1
+
+    elif capitalized == 'n':
+        print("Your new password is: " + password_initial)
         done = 1
 
     else:
