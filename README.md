@@ -16,6 +16,11 @@ Workflow in the main script works as follows:
 6. Then it prints either: a version without capitalized letters or with them.
 
 ---
+ 
+### WiP:
+1. Generated password entropy viewer.
+
+---
 
 ### TODO:
 1. Write unit tests for the script.

@@ -11,29 +11,52 @@ def menu():
     else:
         password_initial = generator.create_password_from_given_length(int(number_of_words), joiner)
 
-    done = 0
-    while done == 0:
-        capitalized = input("Do you want it capitalized? Please select Y/N: ")
+    cap_done = 0
+    while cap_done == 0:
+        capitalized = input("Do you want it capitalized? (Y/N): ")
 
         if capitalized == 'Y':
             password_capitalized = randomizer.randomize_upper_case_in_password(password_initial)
-            done = 1
+            cap_done = 1
             return print("Your new password is: " + password_capitalized)
 
         elif capitalized == 'y':
             password_capitalized = randomizer.randomize_upper_case_in_password(password_initial)
-            done = 1
+            cap_done = 1
             return print("Your new password is: " + password_capitalized)
 
         elif capitalized == 'N':
-            done = 1
+            cap_done = 1
             return print("Your new password is: " + password_initial)
 
         elif capitalized == 'n':
-            done = 1
+            cap_done = 1
             return print("Your new password is: " + password_initial)
 
         else:
-            done = 0
-            return print("Error! Please select a correct option.")
+            cap_done = 0
+            return print("Error! Please select a correct option (Y/N).")
 
+    ent_done = 0
+    while ent_done == 0:
+        entropy = input("Do you want to know the entropy? (Y/N): ")
+
+        if entropy == 'Y':
+            ent_done = 1
+            pass
+
+        elif entropy == 'y':
+            ent_done = 1
+            pass
+
+        elif entropy == 'N':
+            ent_done = 1
+            pass
+
+        elif entropy == 'n':
+            ent_done = 1
+            pass
+
+        else:
+            ent_done = 0
+            return print("Error! Please select a correct option (Y/N).")
