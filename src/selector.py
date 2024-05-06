@@ -1,5 +1,5 @@
 from math import isnan
-from src import generator, randomizer
+from src import generator, capitalizer
 
 
 def menu():
@@ -11,7 +11,7 @@ def menu():
     else:
         password_initial = generator.create_password_from_given_length(int(number_of_words), joiner)
 
-    randomizer.random_capitalizer(password_initial)
+    capitalizer.random_capitalizer(password_initial)
 
     '''ent_done = 0
     while ent_done == 0:
