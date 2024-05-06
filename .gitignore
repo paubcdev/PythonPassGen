@@ -2,7 +2,7 @@ venv/
 pyvenv.cfg
 tests/
 temp/
-src/__pychache__/
+src/__pycache__/
 Lib/
 .idea/
 Scripts/
