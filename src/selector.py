@@ -4,7 +4,7 @@ from src import generator, capitalizer
 
 def menu():
     number_of_words = input("Introduce number of words for password: ")
-    joiner = input("Introduce a joiner (or leave a space, or blank for no joiner): ")
+    joiner = input("Introduce a joiner from this set: ( !@#$%^&*_-=+?.,~;: ) (or leave a space): ")
 
     if isnan(int(number_of_words)):
         raise TypeError("Introduce a valid number")
