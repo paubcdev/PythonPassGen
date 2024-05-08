@@ -1,7 +1,7 @@
 # Python Password Generator
 
 ### Personal project to try to understand Python's "secrets" and random modules.
-This imperfect project started as a way to try and understand how the secrets module works.
+This imperfect project started as a way to try to understand how the "secrets" module works.
 
 It is based on the [famous xkcd comic](https://xkcd.com/936/) about password strength.
 
