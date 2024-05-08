@@ -2,6 +2,14 @@ from math import isnan
 from src import generator, capitalizer
 
 
+def capitalizer_menu(password):
+    print("Select capitalizer method: ")
+    print("1 - Randomly capitalized.")
+    print("2 - All caps.")
+    cap_mode = input()
+    print(capitalizer.capitalizer(password, cap_mode))
+
+
 def menu():
     number_of_words = input("Introduce number of words for password: ")
     joiner = input("Introduce a joiner from this set: ( !@#$%^&*_-=+?.,~;: ) (or leave a space): ")
@@ -11,7 +19,24 @@ def menu():
     else:
         password_initial = generator.create_password_from_given_length(int(number_of_words), joiner)
 
-    capitalizer.random_capitalizer(password_initial)
+    checker = 0
+    while checker == 0:
+        capitalized = input("Do you want it capitalized? (Y/N): ")
+        if capitalized == 'y':
+            capitalizer_menu(password_initial)
+            checker = 1
+        elif capitalized == 'Y':
+            capitalizer_menu(password_initial)
+            checker = 1
+        elif capitalized == 'n':
+            print(password_initial)
+            checker = 1
+        elif capitalized == 'N':
+            print(password_initial)
+            checker = 1
+        else:
+            print("Please select Y/N!")
+            checker = 0
 
     '''ent_done = 0
     while ent_done == 0:

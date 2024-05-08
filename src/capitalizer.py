@@ -1,35 +1,22 @@
 import random
 
 
-def randomize_upper_case_in_password(passw):  # This function takes the password as input and randomly
-    # capitalizes a word in the string
-    password_final = ''.join(random.choice((str.upper, str.lower))(char) for char in passw)
-    return password_final
+def randomize_upper_case_in_password(passw):  # This function takes the password as input and randomly capitalizes a
+    # word in the string
+    random_capitalized = ''.join(random.choice((str.upper, str.lower))(char) for char in passw)
+    return random_capitalized
 
 
-def random_capitalizer(password_initial):
-    cap_done = 0
-    while cap_done == 0:
-        capitalized = input("Do you want it capitalized? (Y/N): ")
+def upper_case_in_password(passw):  # This function takes the password as input and capitalizes all characters in it
+    all_capitalized = passw.upper
+    return all_capitalized
 
-        if capitalized == 'Y':
-            password_capitalized = randomize_upper_case_in_password(password_initial)
-            cap_done = 1
-            return print("Your new password is: " + password_capitalized)
 
-        elif capitalized == 'y':
-            password_capitalized = randomize_upper_case_in_password(password_initial)
-            cap_done = 1
-            return print("Your new password is: " + password_capitalized)
+def capitalizer(password_initial, capitalized):
+    if capitalized == 1:
+        password_final = randomize_upper_case_in_password(password_initial)
+        return print("Your new password is: " + password_final)
 
-        elif capitalized == 'N':
-            cap_done = 1
-            return print("Your new password is: " + password_initial)
-
-        elif capitalized == 'n':
-            cap_done = 1
-            return print("Your new password is: " + password_initial)
-
-        else:
-            cap_done = 0
-            return print("Error! Please select a correct option (Y/N).")
+    elif capitalized == 2:
+        password_final = upper_case_in_password(password_initial)
+        return print("Your new password is: " + password_final)
