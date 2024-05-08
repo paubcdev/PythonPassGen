@@ -24,10 +24,13 @@ Workflow in the main script works as follows:
 
 ### TODO:
 1. Write unit tests for the script.
-2. Add more options: 
-   1. Only first letter of each word is capitalized.
+2. Add more options:
    2. All letters capitalized.
 
 ---
 
+### WON'T DO:
+1. First letter capitalizer.
+
+---
 2024 - paubcdev
