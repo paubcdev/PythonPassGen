@@ -7,10 +7,6 @@ def randomize_upper_case_in_password(passw):  # This function takes the password
     return password_final
 
 
-def upper_case_first_letter(passw):
-    pass
-
-
 def random_capitalizer(password_initial):
     cap_done = 0
     while cap_done == 0:
