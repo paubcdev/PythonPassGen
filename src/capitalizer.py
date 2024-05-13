@@ -8,7 +8,7 @@ def randomize_upper_case_in_password(passw):  # This function takes the password
 
 
 def upper_case_in_password(passw):  # This function takes the password as input and capitalizes all characters in it
-    all_capitalized = passw.upper
+    all_capitalized = passw.upper()
     return all_capitalized
 
 
