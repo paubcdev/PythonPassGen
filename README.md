@@ -18,7 +18,7 @@ Workflow in the main script works as follows:
 ---
  
 ### WiP:
-1. Generated password entropy viewer.
+1. Check menu loops!
 
 ---
 

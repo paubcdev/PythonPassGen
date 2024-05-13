@@ -11,17 +11,3 @@ def calculator(password):
 
     entropy = log2(pow(r, length))
     return entropy
-
-
-
-'''
-check = False
-while not check:
-    char = input("Introduce a symbol: ")
-    if char in CHARSET:
-        print("It is present.")
-        check = True
-    else:
-        print("It is not present.")
-        check = False
-'''
