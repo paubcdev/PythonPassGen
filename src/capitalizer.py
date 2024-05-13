@@ -15,8 +15,8 @@ def upper_case_in_password(passw):  # This function takes the password as input 
 def capitalizer(password_initial, capitalized):
     if capitalized == 1:
         password_final = randomize_upper_case_in_password(password_initial)
-        return print("Your new password is: " + password_final)
+        return password_final
 
     elif capitalized == 2:
         password_final = upper_case_in_password(password_initial)
-        return print("Your new password is: " + password_final)
+        return password_final

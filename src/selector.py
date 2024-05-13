@@ -1,5 +1,5 @@
 from math import isnan
-from src import generator, capitalizer
+from src import generator, capitalizer, entropycalculator
 
 
 def capitalizer_menu(password):
@@ -7,7 +7,7 @@ def capitalizer_menu(password):
     print("1 - Randomly capitalized.")
     print("2 - All caps.")
     cap_mode = int(input())
-    capitalizer.capitalizer(password, cap_mode)
+    return capitalizer.capitalizer(password, cap_mode)
 
 
 def checker(answer):
@@ -39,11 +39,14 @@ def menu():
     capitalized = input("Do you want it capitalized? (Y/N): ")
     ans_cap = checker(capitalized)
     if ans_cap == 1:  # 1 for yes
-        capitalizer_menu(password_initial)
+        password_final = capitalizer_menu(password_initial)
+        print("Your new password is: " + password_final)
     elif ans_cap == 2:  # 2 for no
-        print(password_initial)
+        password_final = password_initial
+        print(password_final)
 
     entropy = input("Do you want to know the entropy of it? (Y/N): ")
     ans_ent = checker(entropy)
     if ans_ent == 1:  # 1 for yes
-        print("Entropy is: WiP")
+        entropy = entropycalculator.calculator(password_final)
+        print("Entropy is: " + str(entropy))
