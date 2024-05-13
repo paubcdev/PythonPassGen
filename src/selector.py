@@ -6,8 +6,8 @@ def capitalizer_menu(password):
     print("Select capitalizer method: ")
     print("1 - Randomly capitalized.")
     print("2 - All caps.")
-    cap_mode = input()
-    print(capitalizer.capitalizer(password, cap_mode))
+    cap_mode = int(input())
+    capitalizer.capitalizer(password, cap_mode)
 
 
 def checker(answer):
@@ -37,8 +37,13 @@ def menu():
         password_initial = generator.create_password_from_given_length(int(number_of_words), joiner)
 
     capitalized = input("Do you want it capitalized? (Y/N): ")
-    ans = checker(capitalized)
-    if ans == 1:  # 1 for yes
+    ans_cap = checker(capitalized)
+    if ans_cap == 1:  # 1 for yes
         capitalizer_menu(password_initial)
-    elif ans == 2:  # 2 for no
+    elif ans_cap == 2:  # 2 for no
         print(password_initial)
+
+    entropy = input("Do you want to know the entropy of it? (Y/N): ")
+    ans_ent = checker(entropy)
+    if ans_ent == 1:  # 1 for yes
+        print("Entropy is: WiP")
