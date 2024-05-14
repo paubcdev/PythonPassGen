@@ -10,7 +10,7 @@ def create_password_from_given_length(leng, joinr):  # This function takes a num
         with open('/usr/share/dict/words') as wordlist:
             words = [word.strip() for word in wordlist]
     else:  # if the OS is not UNIX-based, then an alternate wordlist is provided
-        with open('support_files/words') as wordlist:
+        with open('../support_files/words') as wordlist:
             words = [word.strip() for word in wordlist]
     password = joinr.join(secrets.choice(words) + str(random.randint(0, 9)) for _ in range(leng))
     return password
