@@ -12,13 +12,13 @@ Workflow in the main script works as follows:
 2. It will randomly choose that amount of words from the list, and append a number after every word.
 3. Then asks for a "joiner", a character that will be inserted between the words.
 4. It will append that joiner after the number.
-5. Finally, asks if you want to randomly capitalize some characters in the generated string.
+5. Following that it asks if you want to randomly capitalize some characters in the generated string.
 6. Then it prints either: a version without capitalized letters or with them.
+7. Finally, it asks if you want to know the entropy of it, and displays it accordingly.
 
 ---
  
 ### WiP:
-1. Check menu loops!
 
 ---
 
@@ -31,6 +31,14 @@ Workflow in the main script works as follows:
 
 ### WON'T DO:
 1. First letter capitalizer.
+
+---
+
+### DONE:
+1. Password generator. 
+2. Random capitalizer.
+3. All caps.
+4. Entropy visualizer.
 
 ---
 2024 - paubcdev
