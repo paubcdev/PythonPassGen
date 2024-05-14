@@ -10,9 +10,14 @@ def capitalizer_menu(password):
     return capitalizer.capitalizer(password, cap_mode)
 
 
-def checker(answer):
+def checker(type_of_checker):
     check = 0
     while check == 0:
+        answer = ""
+        if type_of_checker == "capitalized":
+            answer = input("Do you want it capitalized? (Y/N): ")
+        elif type_of_checker == "entropy":
+            answer = input("Do you want to know the entropy? (Y/N): ")
         if answer == 'y':
             check = 1  # 1 for yes
         elif answer == 'Y':
@@ -24,29 +29,30 @@ def checker(answer):
         else:
             print("Please select Y/N!")
             check = 0
-        return check
+    return check
 
 
 def menu():
     number_of_words = input("Introduce number of words for password: ")
     joiner = input("Introduce a joiner from this set: ( !@#$%^&*_-=+?.,~;: ) (or leave a space): ")
+    password_final = ""
 
     if isnan(int(number_of_words)):
         raise TypeError("Introduce a valid number")
     else:
         password_initial = generator.create_password_from_given_length(int(number_of_words), joiner)
 
-    capitalized = input("Do you want it capitalized? (Y/N): ")
-    ans_cap = checker(capitalized)
+    ans_cap = checker("capitalized")
     if ans_cap == 1:  # 1 for yes
         password_final = capitalizer_menu(password_initial)
         print("Your new password is: " + password_final)
+        print("")
     elif ans_cap == 2:  # 2 for no
         password_final = password_initial
-        print(password_final)
+        print("Your new password is: " + password_final)
+        print("")
 
-    entropy = input("Do you want to know the entropy of it? (Y/N): ")
-    ans_ent = checker(entropy)
+    ans_ent = checker("entropy")
     if ans_ent == 1:  # 1 for yes
         entropy = entropycalculator.calculator(password_final)
         print("Entropy is: " + str(entropy))
