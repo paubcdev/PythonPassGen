@@ -19,6 +19,7 @@ Workflow in the main script works as follows:
 ---
  
 ### WiP:
+1. Hashing
 
 ---
 
