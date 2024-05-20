@@ -1,5 +1,5 @@
 from math import isnan
-from src import generator, capitalizer, entropycalculator
+from src import generator, capitalizer, entropycalculator, hashing
 
 
 def capitalizer_menu(password):
@@ -8,6 +8,14 @@ def capitalizer_menu(password):
     print("2 - All caps.")
     cap_mode = int(input())
     return capitalizer.capitalizer(password, cap_mode)
+
+
+def hashing_menu(password):
+    print("Select hashing method: ")
+    print("1- SHA2-256.")
+    print("2- SHA3-256")
+    hash_mode = int(input())
+    return hashing.hasher(password, hash_mode)
 
 
 def checker(type_of_checker):
@@ -62,3 +70,11 @@ def menu():
     if ans_ent == 1:  # 1 for yes
         entropy = entropycalculator.calculator(password_final)
         print("Entropy is: " + str(entropy))
+
+    ans_hash = checker("hashing")
+    if ans_hash == 1:  # 1 for yes
+        hash_type = hashing.hash_sha256(password_final)[0]
+        hashed = hashing.hash_sha256(password_final)[1]
+        print("Your " + hash_type + " hash is " + hashed)
+    elif ans_hash == 2:  # 2 for no
+        pass
