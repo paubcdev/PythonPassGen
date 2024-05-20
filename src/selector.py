@@ -12,8 +12,9 @@ def capitalizer_menu(password):
 
 def hashing_menu(password):
     print("Select hashing method: ")
-    print("1- SHA2-256.")
+    print("1- SHA2-256")
     print("2- SHA3-256")
+    print("3- BLAKE2b")
     hash_mode = int(input())
     return hashing.hasher(password, hash_mode)
 
@@ -73,8 +74,5 @@ def menu():
 
     ans_hash = checker("hashing")
     if ans_hash == 1:  # 1 for yes
-        hash_type = hashing.hash_sha256(password_final)[0]
-        hashed = hashing.hash_sha256(password_final)[1]
-        print("Your " + hash_type + " hash is " + hashed)
-    elif ans_hash == 2:  # 2 for no
-        pass
+        hash_type, hashed_password = hashing_menu(password_final)
+        print("Your " + hash_type + " hash is " + hashed_password)
