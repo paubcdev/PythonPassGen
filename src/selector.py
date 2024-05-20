@@ -1,5 +1,5 @@
 from math import isnan
-from src import generator, capitalizer, entropycalculator
+from src import generator, capitalizer, entropycalculator, hashing
 
 
 def capitalizer_menu(password):
@@ -10,25 +10,40 @@ def capitalizer_menu(password):
     return capitalizer.capitalizer(password, cap_mode)
 
 
+def hashing_menu(password):
+    print("Select hashing method: ")
+    print("1- SHA2-256")
+    print("2- SHA3-256")
+    print("3- BLAKE2b")
+    hash_mode = int(input())
+    return hashing.hasher(password, hash_mode)
+
+
 def checker(type_of_checker):
     check = 0
     while check == 0:
         answer = ""
-        if type_of_checker == "capitalized":
-            answer = input("Do you want it capitalized? (Y/N): ")
-        elif type_of_checker == "entropy":
-            answer = input("Do you want to know the entropy? (Y/N): ")
-        if answer == 'y':
-            check = 1  # 1 for yes
-        elif answer == 'Y':
-            check = 1
-        elif answer == 'n':
-            check = 2  # 2 for no
-        elif answer == 'N':
-            check = 2
-        else:
-            print("Please select Y/N!")
-            check = 0
+
+        match type_of_checker:
+            case "capitalized":
+                answer = input("Do you want it capitalized? (Y/N): ")
+            case "entropy":
+                answer = input("Do you want to know the entropy? (Y/N): ")
+            case "hashing":
+                answer = input("Do you want it hashed? (Y/N): ")
+
+        match answer:
+            case 'y':
+                check = 1  # 1 for yes
+            case 'Y':
+                check = 1
+            case 'n':
+                check = 2  # 2 for no
+            case 'N':
+                check = 2
+            case _:
+                print("Please select Y/N!")
+                check = 0
     return check
 
 
@@ -56,3 +71,8 @@ def menu():
     if ans_ent == 1:  # 1 for yes
         entropy = entropycalculator.calculator(password_final)
         print("Entropy is: " + str(entropy))
+
+    ans_hash = checker("hashing")
+    if ans_hash == 1:  # 1 for yes
+        hash_type, hashed_password = hashing_menu(password_final)
+        print("Your " + hash_type + " hash is " + hashed_password)
