@@ -25,8 +25,6 @@ Workflow in the main script works as follows:
 
 ### TODO:
 1. Write unit tests for the script.
-2. Add more options:
-   2. All letters capitalized.
 
 ---
 
