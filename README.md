@@ -14,12 +14,12 @@ Workflow in the main script works as follows:
 4. It will append that joiner after the number.
 5. Following that it asks if you want to randomly capitalize some characters in the generated string.
 6. Then it prints either: a version without capitalized letters or with them.
-7. Finally, it asks if you want to know the entropy of it, and displays it accordingly.
+7. It asks if you want to know the entropy of it, and displays it accordingly.
+8. Finally, asks if you want to know the hash of the password, according to 3 standards (SHA2-256, SHA3-256 and BLAKE2b).
 
 ---
  
 ### WiP:
-1. Hashing
 
 ---
 
@@ -40,6 +40,7 @@ Workflow in the main script works as follows:
 2. Random capitalizer.
 3. All caps.
 4. Entropy visualizer.
+5. Hashing passwords 3 methods: SHA2-256, SHA3-256 & BLAKE2b.
 
 ---
 2024 - paubcdev
